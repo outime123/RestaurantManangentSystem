@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Thông kê doanh thu theo tháng:</h1>
+<!--<button><a href="/gdTKDoanhThuCuaThang" >Search</a></button>-->
+<!--<form th:action="@{/addPerson}"-->
+<!--      th:object="${personForm}" method="POST">-->
+<!--    Start Date:-->
+<!--    <input type="text" th:field="*{firstName}" />-->
+<!--    <br/>-->
+<!--    End Date:-->
+<!--    <input type="text" th:field="*{lastName}" />-->
+<!--    <br/>-->
+<!--    <input type="submit" value="Search" />-->
+<!--</form>-->
+<table border="1"  align="center">
+    <tr>
+        <th>TT</th>
+        <th>Month</th>
+        <th>Year</th>
+        <th>Tổng tiền</th>
+    </tr>
+
+    <tr th:each="dtt : ${listDTT}">
+        <td th:text="${dtt.tt}"></td>
+        <td><a href="/gdTKDoanhThuCuaThang" th:href="@{'/gdTKDoanhThuCuaThang/'+${dtt.thang}}"  th:text="${dtt.thang}"></a></td>
+        <td th:text="${dtt.nam}"></td>
+<!--        <td th:text="${hd.ngaytao}"></td>-->
+        <td th:text="${dtt.tongtien}"></td>
+    </tr>
+</table>
+<h1>Nhap start date</h1><input>
+<!--<a href="/signup" th:href="@{/signup}" class="btn btn-large btn-success">Back</a>-->
+<input type="button" value="Back" onclick="history.back()">
+</body>
+</html>

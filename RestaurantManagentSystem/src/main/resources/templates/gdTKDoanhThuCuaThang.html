@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Thống kê doanh thu trong tháng :</h1>
+<table border="1"  align="center">
+    <tr>
+        <th>ID</th>
+        <th>Ngay tao</th>
+        <th>Tổng tiền</th>
+    </tr>
+
+    <tr th:each="hd : ${listHD}">
+        <td th:text="${hd.idhoadon}"></td>
+        <td th:text="${hd.ngaytao}"></td>
+        <td th:text="${hd.tongtien}"></td>
+    </tr>
+</table>
+<input type="button" value="Back" onclick="history.back()">
+</body>
+</html>
